@@ -47,4 +47,19 @@ final List<MarvelCharacter> marvelCharacters = [
     description: 'Super-soldier and shield-wielding hero.',
     imageAsset: 'assets/captain_america.jpg',
   ),
+  MarvelCharacter(
+    name: 'Black Widow',
+    description: 'Super-soldier Assassin.',
+    imageAsset: 'assets/blackwidow.jpg',
+  ),
+  MarvelCharacter(
+    name: 'Hulk',
+    description: 'Green-skined, muscular humanoid.',
+    imageAsset: 'assets/hulk.jpg',
+  ),
+  MarvelCharacter(
+    name: 'Doctor Strange',
+    description: 'Super Powered Doctor.',
+    imageAsset: 'assets/doctorstrange.jpg',
+  ),
 ];
