@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'character_profiles.dart';
 
 class ScannerWebPage extends StatelessWidget {
   @override
@@ -16,13 +17,10 @@ class ScannerWebPage extends StatelessWidget {
               height: 300,
               color: Colors.black,
             ),
-
-            // Capture Button
             ElevatedButton(
               onPressed: () {},
               child: Text('Capture'),
             ),
-
             Expanded(
               child: Container(
                 margin: EdgeInsets.all(16),
@@ -41,7 +39,6 @@ class ScannerWebPage extends StatelessWidget {
                 ),
               ),
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -58,6 +55,16 @@ class ScannerWebPage extends StatelessWidget {
                   onPressed: () {},
                 ),
               ],
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => CharacterProfiles(),
+                  ),
+                );
+              },
+              child: Text('View Character Profiles'),
             ),
           ],
         ),
