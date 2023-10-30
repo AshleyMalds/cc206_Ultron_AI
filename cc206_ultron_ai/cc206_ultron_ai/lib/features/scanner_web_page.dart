@@ -17,7 +17,7 @@ class ScannerWebPage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 400,
                 color: Colors.black,
               ),
               ElevatedButton(
@@ -27,7 +27,7 @@ class ScannerWebPage extends StatelessWidget {
               Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // Change the number of columns as needed
+                    crossAxisCount: 4, // Change the number of columns as needed
                   ),
                   itemCount: 5,
                   itemBuilder: (BuildContext context, int index) {
