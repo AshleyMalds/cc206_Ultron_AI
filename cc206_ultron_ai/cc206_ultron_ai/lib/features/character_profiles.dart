@@ -49,42 +49,45 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                labelText: 'Search Characters',
-                prefixIcon: Icon(Icons.search),
-                suffixIcon: IconButton(
-                  icon: Icon(Icons.clear),
-                  onPressed: () {
-                    setState(() {
-                      _searchController.clear();
-                    });
-                  },
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 220), // Margin on the sides
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(30.0), // Padding inside the column
+              child: TextField(
+                controller: _searchController,
+                decoration: InputDecoration(
+                  labelText: 'Search Characters',
+                  prefixIcon: Icon(Icons.search),
+                  suffixIcon: IconButton(
+                    icon: Icon(Icons.clear),
+                    onPressed: () {
+                      setState(() {
+                        _searchController.clear();
+                      });
+                    },
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: _filteredCharacters.length,
-              itemBuilder: (context, index) {
-                final character = _filteredCharacters[index];
-                return ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage(character.imageAsset),
-                  ),
-                  title: Text(character.name),
-                  subtitle: Text(character.description),
-                );
-              },
+            Expanded(
+              child: ListView.builder(
+                itemCount: _filteredCharacters.length,
+                itemBuilder: (context, index) {
+                  final character = _filteredCharacters[index];
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(character.imageAsset),
+                    ),
+                    title: Text(character.name),
+                    subtitle: Text(character.description),
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -96,9 +99,9 @@ class MarvelCharacter {
   final String imageAsset;
 
   MarvelCharacter({
-    required this.name,
-    required this.description,
-    required this.imageAsset,
+    this.name = '',
+    this.description = '',
+    this.imageAsset = '',
   });
 }
 
@@ -120,7 +123,7 @@ final List<MarvelCharacter> marvelCharacters = [
   ),
   MarvelCharacter(
     name: 'Hulk',
-    description: 'Green-skined, muscular humanoid.',
+    description: 'Green-skinned, muscular humanoid.',
     imageAsset: 'assets/hulk.jpg',
   ),
   MarvelCharacter(
