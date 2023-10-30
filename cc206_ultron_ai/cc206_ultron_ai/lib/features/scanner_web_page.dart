@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'character_profiles.dart';
+import 'settings_page.dart';
 
 class ScannerWebPage extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class ScannerWebPage extends StatelessWidget {
               Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4, // Change the number of columns as needed
+                    crossAxisCount: 4,
                   ),
                   itemCount: 5,
                   itemBuilder: (BuildContext context, int index) {
@@ -47,7 +48,13 @@ class ScannerWebPage extends StatelessWidget {
                 children: <Widget>[
                   IconButton(
                     icon: Icon(Icons.settings),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => SettingsPage(),
+                        ),
+                      );
+                    },
                   ),
                   IconButton(
                     icon: Icon(Icons.delete),
@@ -65,7 +72,6 @@ class ScannerWebPage extends StatelessWidget {
                       } else if (value == 'Yahoo') {
                         // Handle Yahoo sharing
                       }
-                      // Add more sharing options as needed
                     },
                     itemBuilder: (BuildContext context) {
                       return <PopupMenuEntry<String>>[
@@ -74,7 +80,7 @@ class ScannerWebPage extends StatelessWidget {
                           child: Row(
                             children: [
                               Icon(Icons.bluetooth),
-                              SizedBox(width: 8), // Add some spacing
+                              SizedBox(width: 8),
                               Text('Bluetooth'),
                             ],
                           ),
@@ -84,7 +90,7 @@ class ScannerWebPage extends StatelessWidget {
                           child: Row(
                             children: [
                               Icon(Icons.email),
-                              SizedBox(width: 8), // Add some spacing
+                              SizedBox(width: 8),
                               Text('Gmail'),
                             ],
                           ),
@@ -94,7 +100,7 @@ class ScannerWebPage extends StatelessWidget {
                           child: Row(
                             children: [
                               Icon(Icons.send),
-                              SizedBox(width: 8), // Add some spacing
+                              SizedBox(width: 8),
                               Text('ShareIt'),
                             ],
                           ),
@@ -104,12 +110,11 @@ class ScannerWebPage extends StatelessWidget {
                           child: Row(
                             children: [
                               Icon(Icons.mail),
-                              SizedBox(width: 8), // Add some spacing
+                              SizedBox(width: 8),
                               Text('Yahoo'),
                             ],
                           ),
                         ),
-                        // Add more sharing options as needed
                       ];
                     },
                   )

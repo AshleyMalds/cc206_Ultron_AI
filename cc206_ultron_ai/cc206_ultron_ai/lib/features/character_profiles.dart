@@ -50,11 +50,11 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
         ],
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 220), // Margin on the sides
+        margin: EdgeInsets.symmetric(horizontal: 220),
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(30.0), // Padding inside the column
+              padding: EdgeInsets.all(30.0),
               child: TextField(
                 controller: _searchController,
                 decoration: InputDecoration(
