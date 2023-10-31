@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
 
+const String heroName = "Captain America";
+const String heroImageAsset = "assets/captain_america.jpg";
+const String heroBackstory = """
+Steve Rogers was a frail young man who was rejected from the military because of his health. However, he was given the opportunity to participate in a secret experiment that would give him superhuman strength and agility. The experiment was a success, and Rogers became Captain America, a symbol of hope and freedom.
+
+Captain America fought alongside the Allies in World War II, and he played a key role in defeating the Axis powers. After the war, he was frozen in ice for nearly seventy years. He was eventually revived, and he joined the Avengers, a team of superheroes who protect the world from threats.
+
+Captain America is a true hero. He is brave, selfless, and always willing to fight for what is right. He is an inspiration to people all over the world.
+""";
+
 class HeroProfilePage extends StatelessWidget {
-  final String heroName;
-  final String heroImageAsset;
-  final String heroBackstory;
-  final String heroPowers;
-  final int heroAge;
-  final List<String> heroAffiliations;
-
-  const HeroProfilePage({
-    Key? key,
-    required this.heroName,
-    required this.heroImageAsset,
-    required this.heroBackstory,
-    required this.heroPowers,
-    required this.heroAge,
-    required this.heroAffiliations,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,20 +20,8 @@ class HeroProfilePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Display the hero's image.
             Image.asset(heroImageAsset),
-
-            // Display the hero's backstory.
             Text(heroBackstory),
-
-            // Display the hero's powers.
-            Text('Powers: $heroPowers'),
-
-            // Display the hero's age.
-            Text('Age: $heroAge years old'),
-
-            // Display the hero's affiliations.
-            Text('Affiliations: ${heroAffiliations.join(', ')}'),
           ],
         ),
       ),

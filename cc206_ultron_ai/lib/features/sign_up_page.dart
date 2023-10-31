@@ -58,11 +58,22 @@ class SignUpPage extends StatelessWidget {
               // Add a button to navigate to the HeroProfilePage
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to the HeroProfilePage
-                  Navigator.pushNamed(context, '/hero-profile');
+                  // Navigate to the HeroProfilePage for Captain America.
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              HeroProfilePage(heroName: "Captain America")));
                 },
-                child: const Text('Hero Profile'),
+                child: Text("Captain America"),
               ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     // Navigate to the HeroProfilePage
+              //     Navigator.pushNamed(context, '/hero-profile');
+              //   },
+              //   child: const Text('Hero Profile'),
+              //),
             ],
           ),
         ),
@@ -74,5 +85,24 @@ class SignUpPage extends StatelessWidget {
     runApp(const MaterialApp(
       home: SignUpPage(),
     ));
+  }
+}
+
+// Add this class to your file.
+class HeroProfilePage extends StatelessWidget {
+  final String heroName;
+
+  const HeroProfilePage({super.key, required this.heroName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('${heroName} Profile'),
+      ),
+      body: Center(
+        child: Text('This is the profile page for ${heroName}.'),
+      ),
+    );
   }
 }
