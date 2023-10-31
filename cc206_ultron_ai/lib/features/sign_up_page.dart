@@ -55,6 +55,14 @@ class SignUpPage extends StatelessWidget {
                 },
                 child: const Text('Log In'),
               ),
+              // Add a button to navigate to the HeroProfilePage
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the HeroProfilePage
+                  Navigator.pushNamed(context, '/hero-profile');
+                },
+                child: const Text('Hero Profile'),
+              ),
             ],
           ),
         ),
