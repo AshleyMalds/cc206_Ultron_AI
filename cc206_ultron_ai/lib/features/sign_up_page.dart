@@ -7,53 +7,53 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: const Text('Sign Up'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               // Sign-up form fields
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Full Name',
                   icon: Icon(Icons.person),
                 ),
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Email',
                   icon: Icon(Icons.email),
                 ),
               ),
               TextFormField(
                 obscureText: true, // For password fields
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Password',
                   icon: Icon(Icons.lock),
                 ),
               ),
 
               // Sign-up button
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
                   // Handle sign-up logic here
                 },
-                child: Text('Sign Up'),
+                child: const Text('Sign Up'),
               ),
 
               // Already have an account? Login option
-              SizedBox(height: 19.0),
-              Text('Already have an account?'),
-              SizedBox(height: 14.0),
+              const SizedBox(height: 19.0),
+              const Text('Already have an account?'),
+              const SizedBox(height: 14.0),
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed('/login');
                 },
-                child: Text('Log In'),
+                child: const Text('Log In'),
               ),
             ],
           ),
@@ -63,7 +63,7 @@ class SignUpPage extends StatelessWidget {
   }
 
   void main() {
-    runApp(MaterialApp(
+    runApp(const MaterialApp(
       home: SignUpPage(),
     ));
   }
