@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'results.dart'; // Import the results.dart file
 import 'character_profiles.dart';
 import 'settings_page.dart';
 import 'package:cc206_ultron_ai/components/home_drawer.dart'; // Import the HomeDrawer
 
-class ScannerWebPage extends StatelessWidget {
+class ScannerWebPage extends StatefulWidget {
+  @override
+  _ScannerWebPageState createState() => _ScannerWebPageState();
+}
+
+class _ScannerWebPageState extends State<ScannerWebPage> {
+  String selectedPhoto = 'asset/captain_america2.jpg'; // Initial selected photo
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,52 +22,66 @@ class ScannerWebPage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-                'asset/marvel_background.jpg'), // Marvel-themed background image
+              'asset/superheroes.jpg', // Marvel-themed background image
+            ),
             fit: BoxFit.cover,
           ),
         ),
         child: Container(
           color:
-              Colors.black.withOpacity(0.7), // Set opacity for better viewing
-          margin: EdgeInsets.symmetric(horizontal: 200),
+              Colors.black.withOpacity(0.3), // Set opacity for better viewing
+          margin: EdgeInsets.symmetric(horizontal: 100),
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Container(
+              Image.asset(
+                selectedPhoto,
                 width: double.infinity,
                 height: 400,
-                color: Colors.black,
+                fit: BoxFit.cover,
               ),
-              ElevatedButton(
+              IconButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          MyHomePage(), // Navigate to results.dart
-                    ),
-                  );
+                  // Show Captain America's profile in a popup
+                  _showCaptainAmericaProfile(context);
                 },
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.red, // Set Marvel-themed button color
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                icon: Icon(
+                  Icons.camera_alt, // Replace with camera icon
+                  size: 40.0, // Adjust the size of the camera icon
+                  color: Colors.white, // Set Marvel-themed button color
                 ),
-                child: Text('Capture'),
               ),
               Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
                   ),
-                  itemCount: 5,
+                  itemCount: 8,
                   itemBuilder: (BuildContext context, int index) {
-                    return Card(
-                      margin: EdgeInsets.all(8),
-                      child: ListTile(
-                        leading: Icon(Icons.image),
-                        title: Text('Image $index'),
-                        onTap: () {},
+                    List<String> photoAssets = [
+                      'asset/hulk.jpg',
+                      'asset/iron_man.jpg',
+                      'asset/doctorstrange.jpg',
+                      'asset/spiderman.jpg',
+                      'asset/wolverine.jpg',
+                      'asset/loki.jpg',
+                      'asset/thor.jpg',
+                      'asset/blackwidow.jpg',
+                    ];
+
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedPhoto = photoAssets[index];
+                        });
+                      },
+                      child: Card(
+                        margin: EdgeInsets.all(8),
+                        child: Image.asset(
+                          photoAssets[index],
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     );
                   },
@@ -79,12 +99,12 @@ class ScannerWebPage extends StatelessWidget {
                         ),
                       );
                     },
-                    color: Colors.red,
+                    color: Colors.white,
                   ),
                   IconButton(
                     icon: Icon(Icons.delete),
                     onPressed: () {},
-                    color: Colors.red,
+                    color: Colors.white,
                   ),
                   PopupMenuButton<String>(
                     icon: Icon(Icons.share),
@@ -169,6 +189,40 @@ class ScannerWebPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _showCaptainAmericaProfile(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Captain America'),
+          content: Column(
+            children: [
+              Image.asset(
+                'asset/captain_america2.jpg', // Replace with the actual image path
+                width: 200,
+                height: 200,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 10),
+              Text('Name: Steve Rogers'),
+              Text('Alias: Captain America'),
+              Text('Affiliation: The Avengers'),
+              // Add more details as needed
+            ],
+          ),
+          actions: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

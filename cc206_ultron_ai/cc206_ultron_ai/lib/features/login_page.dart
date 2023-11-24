@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-                'asset/marvel_background.jpg'), // Marvel-themed background image
+                'asset/superheroes.jpg'), // Marvel-themed background image
             fit: BoxFit.cover,
           ),
         ),

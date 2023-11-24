@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'features/scanner_web_page.dart';
-import 'features/results.dart'; // Import the results.dart file
 import 'components/home_drawer.dart';
 import 'features/settings_page.dart';
 import 'features/sign_up_page.dart';
@@ -40,7 +39,6 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => SignUpPage(),
         '/login': (context) => LoginPage(),
         '/scanner-web': (context) => ScannerWebPage(),
-        '/results': (context) => MyHomePage(), // Added route for results.dart
       },
     );
   }
