@@ -9,10 +9,20 @@ class ScannerWebPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image Scanner Web Page'),
+        title: Text('Image Scanner'),
+        backgroundColor: Colors.red, // Set Marvel-themed app bar color
       ),
-      body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                'asset/marvel_background.jpg'), // Marvel-themed background image
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Container(
+          color:
+              Colors.black.withOpacity(0.7), // Set opacity for better viewing
           margin: EdgeInsets.symmetric(horizontal: 200),
           padding: EdgeInsets.all(16),
           child: Column(
@@ -32,6 +42,11 @@ class ScannerWebPage extends StatelessWidget {
                     ),
                   );
                 },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red, // Set Marvel-themed button color
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                ),
                 child: Text('Capture'),
               ),
               Expanded(
@@ -64,10 +79,12 @@ class ScannerWebPage extends StatelessWidget {
                         ),
                       );
                     },
+                    color: Colors.red,
                   ),
                   IconButton(
                     icon: Icon(Icons.delete),
                     onPressed: () {},
+                    color: Colors.red,
                   ),
                   PopupMenuButton<String>(
                     icon: Icon(Icons.share),
@@ -126,6 +143,7 @@ class ScannerWebPage extends StatelessWidget {
                         ),
                       ];
                     },
+                    color: Colors.white,
                   )
                 ],
               ),
@@ -137,7 +155,15 @@ class ScannerWebPage extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text('View Character Profiles'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red, // Set Marvel-themed button color
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                ),
+                child: Text(
+                  'View Character Profiles',
+                  style: TextStyle(fontSize: 18.0),
+                ),
               ),
             ],
           ),

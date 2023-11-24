@@ -20,13 +20,13 @@ class MyApp extends StatelessWidget {
               length: 2,
               child: Scaffold(
                 appBar: AppBar(
-                  title: Text('Your App Name'),
-                  bottom: TabBar(
-                    tabs: [
-                      Tab(icon: Icon(Icons.scanner)),
-                      Tab(icon: Icon(Icons.settings)),
-                    ],
-                  ),
+                  title: Text('Ultron AI'),
+                  // bottom: TabBar(
+                  //   tabs: [
+                  //     Tab(icon: Icon(Icons.scanner)),
+                  //     Tab(icon: Icon(Icons.settings)),
+                  //   ],
+                  // ),
                 ),
                 drawer: HomeDrawer(),
                 body: TabBarView(

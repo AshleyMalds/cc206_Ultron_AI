@@ -41,7 +41,42 @@ class SettingsPage extends StatelessWidget {
             ),
             ListTile(
               title: Text('Log Out'),
+              onTap: () {
+                // Navigate to the Login page
+                Navigator.of(context).pushReplacementNamed('/login');
+              },
+            ),
+            Divider(),
+            Text(
+              'Appearance',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            ListTile(
+              title: Text('Font Size'),
               onTap: () {},
+            ),
+            ListTile(
+              title: Text('Theme Color'),
+              onTap: () {},
+            ),
+            Divider(),
+            Text(
+              'Privacy',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            ListTile(
+              title: Text('Location Services'),
+              trailing: Switch(
+                value: true,
+                onChanged: (bool value) {},
+              ),
+            ),
+            ListTile(
+              title: Text('Personalized Ads'),
+              trailing: Switch(
+                value: true,
+                onChanged: (bool value) {},
+              ),
             ),
           ],
         ),
