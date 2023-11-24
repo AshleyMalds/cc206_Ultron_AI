@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'results.dart'; // Import the results.dart file
 import 'character_profiles.dart';
 import 'settings_page.dart';
 import 'package:cc206_ultron_ai/components/home_drawer.dart'; // Import the HomeDrawer
@@ -12,7 +13,6 @@ class ScannerWebPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          //child: Container(
           margin: EdgeInsets.symmetric(horizontal: 200),
           padding: EdgeInsets.all(16),
           child: Column(
@@ -24,7 +24,14 @@ class ScannerWebPage extends StatelessWidget {
                 color: Colors.black,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          MyHomePage(), // Navigate to results.dart
+                    ),
+                  );
+                },
                 child: Text('Capture'),
               ),
               Expanded(

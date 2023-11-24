@@ -34,18 +34,21 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
-                  // Handle login logic here
-                  // For example, validate credentials and navigate to the main content.
+                  // Navigate to the ScannerWebPage
+                  Navigator.of(context).pushReplacementNamed('/scanner-web');
                 },
-                child: const Text('Log In'),
+                child: const Text('Go to Scanner'),
               ),
-              // Add a button to navigate to the HeroProfilePage
-              ElevatedButton(
+
+              // Already have an account? Sign up option
+              const SizedBox(height: 19.0),
+              const Text("Don't have an account?"),
+              const SizedBox(height: 14.0),
+              TextButton(
                 onPressed: () {
-                  // Navigate to the HeroProfilePage
-                  Navigator.pushNamed(context, '/hero-profile');
+                  Navigator.of(context).pushNamed('/sign-up');
                 },
-                child: const Text('Hero Profile'),
+                child: const Text('Sign Up'),
               ),
             ],
           ),
