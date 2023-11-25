@@ -197,7 +197,25 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Captain America'),
+          backgroundColor: Colors.red, // Set Marvel-themed background color
+          title: Row(
+            children: [
+              Image.asset(
+                'asset/marvel_logo.png', // Replace with the actual Marvel logo path
+                width: 80, // Adjusted logo width
+                height: 40, // Adjusted logo height
+                fit: BoxFit.contain,
+              ),
+              SizedBox(width: 10), // Add space between logo and text
+              Text(
+                'Captain America',
+                style: TextStyle(
+                  color: Colors.white, // Set text color
+                  fontFamily: 'Marvel',
+                ),
+              ),
+            ],
+          ),
           content: Column(
             children: [
               Image.asset(
@@ -207,9 +225,24 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                 fit: BoxFit.cover,
               ),
               SizedBox(height: 10),
-              Text('Name: Steve Rogers'),
-              Text('Alias: Captain America'),
-              Text('Affiliation: The Avengers'),
+              Text(
+                'Name: Steve Rogers',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Alias: Captain America',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Affiliation: The Avengers',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               // Add more details as needed
             ],
           ),
@@ -218,6 +251,10 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white, // Set button color
+                onPrimary: Colors.red, // Set text color
+              ),
               child: Text('Close'),
             ),
           ],

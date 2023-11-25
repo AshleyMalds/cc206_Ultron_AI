@@ -167,64 +167,64 @@ final List<MarvelCharacter> marvelCharacters = [
   MarvelCharacter(
     name: 'Iron Man',
     description: 'Genius, billionaire, philanthropist.',
-    imageAsset: 'assets/iron_man.jpg',
+    imageAsset: 'asset/iron_man.jpg',
   ),
   MarvelCharacter(
     name: 'Captain America',
     description: 'Super-soldier and shield-wielding hero.',
-    imageAsset: 'assets/captain_america.jpg',
+    imageAsset: 'asset/captain_america2.jpg',
   ),
   MarvelCharacter(
     name: 'Black Widow',
     description: 'Super-soldier Assassin.',
-    imageAsset: 'assets/blackwidow.jpg',
+    imageAsset: 'asset/blackwidow.jpg',
   ),
   MarvelCharacter(
     name: 'Hulk',
     description: 'Green-skinned, muscular humanoid.',
-    imageAsset: 'assets/hulk.jpg',
+    imageAsset: 'asset/hulk.jpg',
   ),
   MarvelCharacter(
     name: 'Doctor Strange',
     description: 'Super Powered Doctor.',
-    imageAsset: 'assets/doctorstrange.jpg',
+    imageAsset: 'asset/doctorstrange1.jpg',
   ),
   MarvelCharacter(
     name: 'Spider-Man',
     description: 'Friendly neighborhood superhero.',
-    imageAsset: 'assets/spiderman.jpg',
+    imageAsset: 'asset/spiderman.jpg',
   ),
   MarvelCharacter(
     name: 'Thor',
     description: 'God of Thunder with a mighty hammer.',
-    imageAsset: 'assets/thor.jpg',
+    imageAsset: 'asset/thor1.jpg',
   ),
   MarvelCharacter(
     name: 'Black Panther',
     description: 'King of Wakanda with enhanced strength.',
-    imageAsset: 'assets/blackpanther.jpg',
+    imageAsset: 'asset/blackpanther.jpg',
   ),
   MarvelCharacter(
     name: 'Scarlet Witch',
     description: 'Reality-warping mutant with magical abilities.',
-    imageAsset: 'assets/scarletwitch.jpg',
+    imageAsset: 'asset/scarletwitch.jpg',
   ),
   MarvelCharacter(
     name: 'Wolverine',
     description: 'Mutant with retractable claws and accelerated healing.',
-    imageAsset: 'assets/wolverine.jpg',
+    imageAsset: 'asset/wolverine1.jpg',
   ),
   MarvelCharacter(
     name: 'Captain Marvel',
     description:
         'Air Force pilot with superhuman strength and energy projection.',
-    imageAsset: 'assets/captainmarvel.jpg',
+    imageAsset: 'asset/captainmarvel.jpg',
   ),
   MarvelCharacter(
     name: 'Ant-Man',
     description:
         'Master thief with a suit that allows him to shrink or grow in size.',
-    imageAsset: 'assets/antman.jpg',
+    imageAsset: 'asset/antman.jpg',
   ),
 ];
 
