@@ -65,7 +65,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                       'asset/doctorstrange.jpg',
                       'asset/spiderman.jpg',
                       'asset/wolverine.jpg',
-                      'asset/loki.jpg',
+                      'asset/captain_america2.jpg',
                       'asset/thor.jpg',
                       'asset/blackwidow.jpg',
                     ];
