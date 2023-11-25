@@ -196,68 +196,127 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: Colors.red, // Set Marvel-themed background color
-          title: Row(
-            children: [
-              Image.asset(
-                'asset/marvel_logo.png', // Replace with the actual Marvel logo path
-                width: 80, // Adjusted logo width
-                height: 40, // Adjusted logo height
-                fit: BoxFit.contain,
-              ),
-              SizedBox(width: 10), // Add space between logo and text
-              Text(
-                'Captain America',
-                style: TextStyle(
-                  color: Colors.white, // Set text color
-                  fontFamily: 'Marvel',
-                ),
-              ),
-            ],
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
           ),
-          content: Column(
-            children: [
-              Image.asset(
-                'asset/captain_america2.jpg', // Replace with the actual image path
-                width: 200,
-                height: 200,
+          backgroundColor: Colors.transparent,
+          child: Container(
+            width: 300, // Adjusted width of the popup
+            height: 400,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              image: DecorationImage(
+                image: AssetImage(
+                    'asset/background3.jpg'), // Replace with the actual background image path
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 10),
-              Text(
-                'Name: Steve Rogers',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              Text(
-                'Alias: Captain America',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              Text(
-                'Affiliation: The Avengers',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              // Add more details as needed
-            ],
-          ),
-          actions: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white, // Set button color
-                onPrimary: Colors.red, // Set text color
-              ),
-              child: Text('Close'),
             ),
-          ],
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'asset/marvel_logo.png', // Replace with the actual Marvel logo path
+                        width: 30, // Adjusted logo width
+                        height: 15, // Adjusted logo height
+                        fit: BoxFit.contain,
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        'Captain America',
+                        style: TextStyle(
+                          color: Colors.white, // Set text color
+                          fontFamily: 'Marvel', // Set Marvel-themed font
+                          fontSize: 14.0, // Set font size
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5),
+                Image.asset(
+                  'asset/captain_america2.jpg', // Replace with the actual image path
+                  height: 120, // Adjusted image height
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Name: Steve Rogers',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                      Text(
+                        'Alias: Captain America',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                      Text(
+                        'Affiliation: The Avengers',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        'Bio:',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 2),
+                      Text(
+                        'Steve Rogers, known by his superhero alias Captain America, is a patriotic and courageous '
+                        'super-soldier. Created during World War II as part of the Super Soldier program, Steve underwent '
+                        'a transformation that turned him into the pinnacle of human physical and mental potential.',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10.0,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        'Captain America wields a vibranium shield, which is not only an indestructible defensive weapon but '
+                        'also a powerful offensive tool. He is a master tactician and an inspirational leader, guiding the '
+                        'Avengers through some of their toughest battles.',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white, // Set button color
+                    onPrimary: Colors.red, // Set text color
+                  ),
+                  child: Text('Close'),
+                ),
+              ],
+            ),
+          ),
         );
       },
     );
