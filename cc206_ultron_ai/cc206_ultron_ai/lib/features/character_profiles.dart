@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cc206_ultron_ai/components/home_drawer.dart'; // Replace with the actual path to HomeDrawer
 
 class CharacterProfiles extends StatefulWidget {
   @override
@@ -56,6 +57,7 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
           ),
         ],
       ),
+      drawer: HomeDrawer(), // Add the drawer here
       body: Column(
         children: [
           Container(

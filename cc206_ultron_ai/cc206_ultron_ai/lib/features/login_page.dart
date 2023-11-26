@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -85,16 +86,24 @@ class LoginPage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 12.0),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Go to Scanner',
-                      style: TextStyle(fontSize: 18.0),
+                      style: GoogleFonts.robotoSlab(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
 
                   // Already have an account? Sign up option
                   const SizedBox(height: 19.0),
-                  const Text("Don't have an account?",
-                      style: TextStyle(color: Colors.white, fontSize: 16.0)),
+                  Text("Don't have an account?",
+                      style: GoogleFonts.robotoSlab(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      )),
                   const SizedBox(height: 14.0),
                   TextButton(
                     onPressed: () {
@@ -103,9 +112,13 @@ class LoginPage extends StatelessWidget {
                     style: TextButton.styleFrom(
                       primary: Colors.white, // Set text color to white
                     ),
-                    child: const Text(
+                    child: Text(
                       'Sign Up',
-                      style: TextStyle(fontSize: 18.0),
+                      style: GoogleFonts.robotoSlab(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],

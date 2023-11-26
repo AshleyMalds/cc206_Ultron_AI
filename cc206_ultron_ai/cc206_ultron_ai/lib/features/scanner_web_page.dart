@@ -18,6 +18,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
         title: Text('Image Scanner'),
         backgroundColor: Colors.red, // Set Marvel-themed app bar color
       ),
+      drawer: HomeDrawer(), // Add the drawer here
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
