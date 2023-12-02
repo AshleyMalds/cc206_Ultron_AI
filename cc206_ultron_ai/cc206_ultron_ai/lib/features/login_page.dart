@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
                           labelText: 'Email',
                           labelStyle: TextStyle(color: Colors.white),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.red),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.red),
@@ -86,7 +86,7 @@ class LoginPage extends StatelessWidget {
                           labelText: 'Password',
                           labelStyle: TextStyle(color: Colors.white),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.red),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.red),
@@ -99,7 +99,7 @@ class LoginPage extends StatelessWidget {
                     ),
 
                     // Login button
-                    const SizedBox(height: 16.0),
+                    const SizedBox(height: 10.0),
                     ElevatedButton(
                       onPressed: () {
                         // Navigate to the ScannerWebPage
@@ -122,7 +122,7 @@ class LoginPage extends StatelessWidget {
                     ),
 
                     // Already have an account? Sign up option
-                    const SizedBox(height: 19.0),
+                    const SizedBox(height: 10.0),
                     Text(
                       "Don't have an account?",
                       style: GoogleFonts.roboto(
