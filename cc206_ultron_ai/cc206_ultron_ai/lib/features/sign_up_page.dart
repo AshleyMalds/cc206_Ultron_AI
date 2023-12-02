@@ -39,8 +39,8 @@ class SignUpPage extends StatelessWidget {
 
                     // Signup text
                     Text(
-                      'Signup',
-                      style: GoogleFonts.roboto(
+                      'SIGNUP',
+                      style: GoogleFonts.robotoSlab(
                         fontSize: 36.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -202,7 +202,7 @@ class SignUpPage extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 19.0),
+                    const SizedBox(height: 10.0),
 
                     // Already have an account text
                     Text(
@@ -214,7 +214,7 @@ class SignUpPage extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 14.0),
+                    const SizedBox(height: 10.0),
 
                     // Log In button
                     TextButton(
@@ -226,7 +226,7 @@ class SignUpPage extends StatelessWidget {
                         backgroundColor: Colors.red,
                         padding: EdgeInsets.symmetric(
                           horizontal: 16.0,
-                          vertical: 15.0,
+                          vertical: 10.0,
                         ),
                       ),
                       child: Text(

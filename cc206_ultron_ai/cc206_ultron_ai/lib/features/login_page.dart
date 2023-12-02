@@ -39,7 +39,7 @@ class LoginPage extends StatelessWidget {
                     // Login text
                     Text(
                       'LOGIN',
-                      style: GoogleFonts.roboto(
+                      style: GoogleFonts.robotoSlab(
                         fontSize: 36.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
