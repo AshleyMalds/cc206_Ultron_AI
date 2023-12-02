@@ -232,7 +232,7 @@ class SignUpPage extends StatelessWidget {
                       child: Text(
                         'Log In',
                         style: GoogleFonts.roboto(
-                          fontSize: 19.0,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),
