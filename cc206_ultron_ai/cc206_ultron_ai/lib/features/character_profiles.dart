@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:cc206_ultron_ai/components/home_drawer.dart';
 
 class CharacterProfiles extends StatefulWidget {
@@ -37,13 +38,14 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Marvel Character Profiles',
-          style: TextStyle(
-            fontFamily: 'Marvel',
+          'Marvel Characters',
+          style: GoogleFonts.robotoSlab(
             fontSize: 24.0,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.black.withOpacity(0.7),
         actions: [
           IconButton(
             icon: Icon(Icons.clear),
@@ -69,13 +71,11 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: ConstrainedBox(
-                constraints:
-                    BoxConstraints(maxWidth: 500.0), // Set the maximum width
+                constraints: BoxConstraints(maxWidth: 500.0),
                 child: TextField(
                   controller: _searchController,
                   style: TextStyle(color: Colors.white),
-                  // maxLength: 20, // Remove the maxLength property
-                  maxLines: 1, // Set the maximum number of lines
+                  maxLines: 1,
                   decoration: InputDecoration(
                     labelText: 'Search Characters',
                     labelStyle: TextStyle(color: Colors.white),
@@ -90,7 +90,7 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
                     ),
                     contentPadding: EdgeInsets.all(0),
                     filled: true,
-                    fillColor: Colors.black.withOpacity(0.5),
+                    fillColor: Colors.black.withOpacity(0.7),
                   ),
                 ),
               ),
@@ -107,7 +107,9 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
                   final character = _filteredCharacters[index];
                   return InkWell(
                     onTap: () {
-                      // Handle hero tap if needed
+                      if (character.name == 'Captain America') {
+                        _showCaptainAmericaProfile(context, character);
+                      }
                     },
                     child: Card(
                       color: Colors.grey[800],
@@ -137,10 +139,13 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
                               children: [
                                 Text(
                                   character.name,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12.0,
+                                  style: GoogleFonts.robotoSlab(
+                                    textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize:
+                                          14.0, // Increase font size for emphasis
+                                    ),
                                   ),
                                 ),
                                 SizedBox(height: 4.0),
@@ -164,6 +169,61 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showCaptainAmericaProfile(
+      BuildContext context, MarvelCharacter character) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          backgroundColor: Colors.transparent,
+          child: Container(
+            width: 300,
+            height: 400,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              image: DecorationImage(
+                image: AssetImage('asset/background3.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'asset/logo.png',
+                        width: 30,
+                        height: 30,
+                        fit: BoxFit.contain,
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        character.name,
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontFamily: 'RobotoSlab',
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // ... (unchanged)
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
