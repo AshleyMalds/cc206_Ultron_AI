@@ -143,17 +143,18 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
                                     textStyle: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
-                                      fontSize:
-                                          14.0, // Increase font size for emphasis
+                                      fontSize: 14.0,
                                     ),
                                   ),
                                 ),
                                 SizedBox(height: 4.0),
                                 Text(
                                   character.description,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10.0,
+                                  style: GoogleFonts.roboto(
+                                    textStyle: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 10.0,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -184,7 +185,7 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
           backgroundColor: Colors.transparent,
           child: Container(
             width: 300,
-            height: 400,
+            height: 455,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
               image: DecorationImage(
@@ -208,17 +209,75 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
                       SizedBox(width: 10),
                       Text(
                         character.name,
-                        style: TextStyle(
+                        style: GoogleFonts.robotoSlab(
                           color: Colors.red,
-                          fontFamily: 'RobotoSlab',
-                          fontSize: 14.0,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
                 ),
-                // ... (unchanged)
+                SizedBox(height: 5),
+                Image.network(
+                  character.gifUrl,
+                  height: 120,
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Name: ${character.name}',
+                        style: GoogleFonts.robotoSlab(
+                          color: Colors.white,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                      Text(
+                        'Description: ${character.description}',
+                        style: GoogleFonts.robotoSlab(
+                          color: Colors.white,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Steve Rogers, known by his superhero alias Captain America, is a patriotic and courageous '
+                        'super-soldier. Created during World War II as part of the Super Soldier program, Steve underwent '
+                        'a transformation that turned him into the pinnacle of human physical and mental potential.',
+                        style: GoogleFonts.robotoSlab(
+                          color: Colors.white,
+                          fontSize: 10.0,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Captain America wields a vibranium shield, which is not only an indestructible defensive weapon but '
+                        'also a powerful offensive tool. He is a master tactician and an inspirational leader, guiding the '
+                        'Avengers through some of their toughest battles.',
+                        style: GoogleFonts.robotoSlab(
+                          color: Colors.white,
+                          fontSize: 10.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.red,
+                  ),
+                  child: Text('Close'),
+                ),
               ],
             ),
           ),
