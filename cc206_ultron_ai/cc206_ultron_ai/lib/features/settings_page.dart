@@ -7,29 +7,30 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Row(
-            children: [
-              Image.asset('asset/logo.png', width: 30, height: 30),
-              SizedBox(width: 10),
-              Text('Settings',
-                  style: GoogleFonts.robotoSlab(
-                      fontSize: 24.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold)),
-            ],
-          ),
-          backgroundColor: Colors.black,
-          actions: [
-            IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SettingsPage()),
-                );
-              },
-            )
-          ]),
+        title: Row(
+          children: [
+            Image.asset('asset/logo.png', width: 30, height: 30),
+            SizedBox(width: 10),
+            Text('Settings',
+                style: GoogleFonts.robotoSlab(
+                    fontSize: 24.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold)),
+          ],
+        ),
+        backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsPage()),
+              );
+            },
+          )
+        ],
+      ),
       drawer: HomeDrawer(),
       body: Stack(
         children: [
@@ -50,10 +51,11 @@ class SettingsPage extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
-                  color: Colors.white,
+                  color: Colors.black
+                      .withOpacity(0.7), // Darkened black background
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 5,
                       offset: Offset(0, 3),
@@ -70,17 +72,23 @@ class SettingsPage extends StatelessWidget {
                         buildSwitchTile("Notifications", true),
                         buildTextTile("History", onTap: () {}),
                       ]),
-                      Divider(),
+                      Divider(
+                        color: Colors.white, // Divider color changed to white
+                      ),
                       buildSettingRow("Appearance", [
                         buildTextTile("Font Size", onTap: () {}),
                         buildTextTile("Theme Color", onTap: () {}),
                       ]),
-                      Divider(),
+                      Divider(
+                        color: Colors.white, // Divider color changed to white
+                      ),
                       buildSettingRow("Privacy", [
                         buildSwitchTile("Location Services", true),
                         buildSwitchTile("Personalized Ads", true),
                       ]),
-                      Divider(),
+                      Divider(
+                        color: Colors.white, // Divider color changed to white
+                      ),
                       buildSettingRow("Account Settings", [
                         buildTextTile("Change Password", onTap: () {}),
                         buildTextTile("Security", onTap: () {}),
@@ -154,11 +162,16 @@ class SettingsPage extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.robotoSlab(
-              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.red), // Text color changed to red
         ),
         SizedBox(height: 5),
         Divider(
-            color: Colors.black, thickness: 2, height: 5), // Reduced spacing
+          color: Colors.white, // Divider color changed to white
+          thickness: 2,
+          height: 5,
+        ), // Reduced spacing
         SizedBox(height: 5),
         Column(
           children: content,
@@ -171,7 +184,8 @@ class SettingsPage extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: GoogleFonts.robotoSlab(color: Colors.black),
+        style: GoogleFonts.robotoSlab(
+            color: Colors.white), // Text color changed to white
       ),
       trailing: Switch(
         value: value,
@@ -184,7 +198,8 @@ class SettingsPage extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: GoogleFonts.roboto(color: Colors.black),
+        style: GoogleFonts.roboto(
+            color: Colors.white), // Text color changed to white
       ),
       onTap: onTap,
     );

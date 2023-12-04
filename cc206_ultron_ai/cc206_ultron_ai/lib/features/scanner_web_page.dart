@@ -15,8 +15,33 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image Scanner'),
-        backgroundColor: Colors.red, // Set Marvel-themed app bar color
+        title: Row(
+          children: [
+            Image.asset('asset/logo.png', width: 30, height: 30),
+            SizedBox(width: 10),
+            Text(
+              'Image Scanner',
+              style: TextStyle(
+                fontFamily: 'RobotoSlab',
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SettingsPage(),
+                ),
+              );
+            },
+          )
+        ],
       ),
       drawer: HomeDrawer(), // Add the drawer here
       body: Container(
