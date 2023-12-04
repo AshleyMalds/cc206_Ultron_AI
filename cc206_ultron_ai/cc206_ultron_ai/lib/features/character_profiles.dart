@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cc206_ultron_ai/components/home_drawer.dart';
-import 'settings_page.dart'; // Import the SettingsPage
+import 'package:cc206_ultron_ai/features/settings_page.dart'; // Import the SettingsPage
 
 class CharacterProfiles extends StatefulWidget {
   @override
@@ -38,37 +38,29 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Marvel Characters',
-          style: GoogleFonts.robotoSlab(
-            fontSize: 24.0,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
+          title: Row(
+            children: [
+              Image.asset('asset/logo.png', width: 30, height: 30),
+              SizedBox(width: 10),
+              Text('Marvel Superheroes',
+                  style: GoogleFonts.robotoSlab(
+                      fontSize: 24.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
+            ],
           ),
-        ),
-        backgroundColor: Colors.black,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {
-              // Navigate to the Settings page
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SettingsPage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.clear),
-            onPressed: () {
-              setState(() {
-                _searchController.clear();
-                _filteredCharacters = List.from(marvelCharacters);
-              });
-            },
-          ),
-        ],
-      ),
+          backgroundColor: Colors.black,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
+              },
+            )
+          ]),
       drawer: HomeDrawer(),
       body: Container(
         decoration: BoxDecoration(
@@ -88,7 +80,7 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
                   style: TextStyle(color: Colors.white),
                   maxLines: 1,
                   decoration: InputDecoration(
-                    labelText: 'Search Characters',
+                    labelText: 'Marvel Characters',
                     labelStyle: TextStyle(color: Colors.white),
                     prefixIcon: Icon(Icons.search, color: Colors.white),
                     suffixIcon: IconButton(
