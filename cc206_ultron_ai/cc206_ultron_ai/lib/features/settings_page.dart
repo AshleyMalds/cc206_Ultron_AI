@@ -162,7 +162,7 @@ class SettingsPage extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.robotoSlab(
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.red), // Text color changed to red
         ),

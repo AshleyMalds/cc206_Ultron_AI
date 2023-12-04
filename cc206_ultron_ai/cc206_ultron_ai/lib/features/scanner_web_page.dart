@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'character_profiles.dart';
 import 'settings_page.dart';
-import 'package:cc206_ultron_ai/components/home_drawer.dart'; // Import the HomeDrawer
+import 'package:cc206_ultron_ai/components/home_drawer.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ScannerWebPage extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class ScannerWebPage extends StatefulWidget {
 }
 
 class _ScannerWebPageState extends State<ScannerWebPage> {
-  String selectedPhoto = 'asset/captain_america2.jpg'; // Initial selected photo
+  String selectedPhoto = 'asset/captain_america2.jpg';
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +21,8 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
             Image.asset('asset/logo.png', width: 30, height: 30),
             SizedBox(width: 10),
             Text(
-              'Image Scanner',
-              style: TextStyle(
-                fontFamily: 'RobotoSlab',
+              'Hero Scanner',
+              style: GoogleFonts.robotoSlab(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -43,45 +43,54 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
           )
         ],
       ),
-      drawer: HomeDrawer(), // Add the drawer here
+      drawer: HomeDrawer(),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              'asset/superheroes.jpg', // Marvel-themed background image
-            ),
+            image: AssetImage('asset/superheroes.jpg'),
             fit: BoxFit.cover,
           ),
         ),
         child: Container(
-          color:
-              Colors.black.withOpacity(0.3), // Set opacity for better viewing
-          margin: EdgeInsets.symmetric(horizontal: 100),
+          color: Colors.black.withOpacity(0.3),
+          margin: EdgeInsets.symmetric(horizontal: 300),
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset(
-                selectedPhoto,
-                width: double.infinity,
-                height: 400,
-                fit: BoxFit.cover,
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 2.0),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(6.0),
+                  child: Image.asset(
+                    selectedPhoto,
+                    width: double.infinity,
+                    height: 400,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
+              SizedBox(height: 16),
               IconButton(
                 onPressed: () {
-                  // Show Captain America's profile in a popup
                   _showCaptainAmericaProfile(context);
                 },
                 icon: Icon(
-                  Icons.camera_alt, // Replace with camera icon
-                  size: 40.0, // Adjust the size of the camera icon
-                  color: Colors.white, // Set Marvel-themed button color
+                  Icons.camera_alt,
+                  size: 40.0,
+                  color: Colors.white,
                 ),
               ),
+              SizedBox(height: 16),
               Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 8.0,
+                    mainAxisSpacing: 8.0,
                   ),
                   itemCount: 8,
                   itemBuilder: (BuildContext context, int index) {
@@ -103,16 +112,23 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                         });
                       },
                       child: Card(
-                        margin: EdgeInsets.all(8),
-                        child: Image.asset(
-                          photoAssets[index],
-                          fit: BoxFit.cover,
+                        elevation: 4.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            photoAssets[index],
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     );
                   },
                 ),
               ),
+              SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -135,64 +151,18 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                   PopupMenuButton<String>(
                     icon: Icon(Icons.share),
                     onSelected: (String value) {
-                      if (value == 'Bluetooth') {
-                        // Handle Bluetooth sharing
-                      } else if (value == 'Gmail') {
-                        // Handle Gmail sharing
-                      } else if (value == 'ShareIt') {
-                        // Handle ShareIt sharing
-                      } else if (value == 'Yahoo') {
-                        // Handle Yahoo sharing
-                      }
+                      // Handle sharing options
                     },
                     itemBuilder: (BuildContext context) {
                       return <PopupMenuEntry<String>>[
-                        PopupMenuItem<String>(
-                          value: 'Bluetooth',
-                          child: Row(
-                            children: [
-                              Icon(Icons.bluetooth),
-                              SizedBox(width: 8),
-                              Text('Bluetooth'),
-                            ],
-                          ),
-                        ),
-                        PopupMenuItem<String>(
-                          value: 'Gmail',
-                          child: Row(
-                            children: [
-                              Icon(Icons.email),
-                              SizedBox(width: 8),
-                              Text('Gmail'),
-                            ],
-                          ),
-                        ),
-                        PopupMenuItem<String>(
-                          value: 'ShareIt',
-                          child: Row(
-                            children: [
-                              Icon(Icons.send),
-                              SizedBox(width: 8),
-                              Text('ShareIt'),
-                            ],
-                          ),
-                        ),
-                        PopupMenuItem<String>(
-                          value: 'Yahoo',
-                          child: Row(
-                            children: [
-                              Icon(Icons.mail),
-                              SizedBox(width: 8),
-                              Text('Yahoo'),
-                            ],
-                          ),
-                        ),
+                        // Sharing options menu items
                       ];
                     },
                     color: Colors.white,
                   )
                 ],
               ),
+              SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
@@ -202,7 +172,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.red, // Set Marvel-themed button color
+                  primary: Colors.red,
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
                 ),
@@ -228,13 +198,12 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
           ),
           backgroundColor: Colors.transparent,
           child: Container(
-            width: 300, // Adjusted width of the popup
+            width: 300,
             height: 400,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
               image: DecorationImage(
-                image: AssetImage(
-                    'asset/background3.jpg'), // Replace with the actual background image path
+                image: AssetImage('asset/background3.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -246,18 +215,18 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                   child: Row(
                     children: [
                       Image.asset(
-                        'asset/marvel_logo.png', // Replace with the actual Marvel logo path
-                        width: 30, // Adjusted logo width
-                        height: 15, // Adjusted logo height
+                        'asset/marvel_logo.png',
+                        width: 30,
+                        height: 15,
                         fit: BoxFit.contain,
                       ),
                       SizedBox(width: 10),
                       Text(
                         'Captain America',
                         style: TextStyle(
-                          color: Colors.white, // Set text color
-                          fontFamily: 'Marvel', // Set Marvel-themed font
-                          fontSize: 14.0, // Set font size
+                          color: Colors.white,
+                          fontFamily: 'Marvel',
+                          fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -266,8 +235,8 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                 ),
                 SizedBox(height: 5),
                 Image.asset(
-                  'asset/captain_america2.jpg', // Replace with the actual image path
-                  height: 120, // Adjusted image height
+                  'asset/captain_america2.jpg',
+                  height: 120,
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 5),
@@ -276,56 +245,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Name: Steve Rogers',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12.0,
-                        ),
-                      ),
-                      Text(
-                        'Alias: Captain America',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12.0,
-                        ),
-                      ),
-                      Text(
-                        'Affiliation: The Avengers',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12.0,
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        'Bio:',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 2),
-                      Text(
-                        'Steve Rogers, known by his superhero alias Captain America, is a patriotic and courageous '
-                        'super-soldier. Created during World War II as part of the Super Soldier program, Steve underwent '
-                        'a transformation that turned him into the pinnacle of human physical and mental potential.',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10.0,
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        'Captain America wields a vibranium shield, which is not only an indestructible defensive weapon but '
-                        'also a powerful offensive tool. He is a master tactician and an inspirational leader, guiding the '
-                        'Avengers through some of their toughest battles.',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10.0,
-                        ),
-                      ),
+                      // Captain America's profile details
                     ],
                   ),
                 ),
@@ -335,8 +255,8 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.white, // Set button color
-                    onPrimary: Colors.red, // Set text color
+                    primary: Colors.white,
+                    onPrimary: Colors.red,
                   ),
                   child: Text('Close'),
                 ),
