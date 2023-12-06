@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
                             borderSide: BorderSide(color: Colors.red),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           icon: Icon(Icons.email, color: Colors.white),
                           contentPadding:
@@ -89,7 +89,7 @@ class LoginPage extends StatelessWidget {
                             borderSide: BorderSide(color: Colors.red),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           icon: Icon(Icons.lock, color: Colors.white),
                           contentPadding:
