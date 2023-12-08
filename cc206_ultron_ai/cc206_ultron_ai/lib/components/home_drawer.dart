@@ -23,7 +23,7 @@ class HomeDrawer extends StatelessWidget {
                   Padding(
                     padding:
                         const EdgeInsets.only(top: 10, left: 28.0, right: 8.0),
-                    // Increase the size of the logo
+                    // logo size
                     child: Image.asset('asset/logo.png', width: 80, height: 77),
                   ),
                   SizedBox(height: 10),
@@ -31,7 +31,7 @@ class HomeDrawer extends StatelessWidget {
                     'Ultron AI',
                     style: GoogleFonts.robotoSlab(
                       color: Colors.red,
-                      fontSize: 30, // Adjusted font size
+                      fontSize: 30, // font size
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -70,7 +70,7 @@ class HomeDrawer extends StatelessWidget {
           children: [
             Icon(icon, color: Colors.white),
             SizedBox(width: 8),
-            // Apply ScaleTransition only to the Text when hovering
+            // ScaleTransition Text when hovering
             MouseRegion(
               child: TweenAnimationBuilder(
                 tween: Tween<double>(begin: 1, end: 1.1),
@@ -85,7 +85,7 @@ class HomeDrawer extends StatelessWidget {
                   title,
                   style: GoogleFonts.roboto(
                     color: Colors.white,
-                    fontSize: 14, // Adjusted font size
+                    fontSize: 14, // font size
                   ),
                 ),
               ),
@@ -93,7 +93,7 @@ class HomeDrawer extends StatelessWidget {
           ],
         ),
         onTap: () {
-          Navigator.of(context).pop(); // Close the drawer
+          Navigator.of(context).pop(); // Close drawer
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) => destination,
