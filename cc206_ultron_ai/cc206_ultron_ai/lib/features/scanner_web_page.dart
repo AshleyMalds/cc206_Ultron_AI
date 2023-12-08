@@ -16,6 +16,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //appbar contents
         title: Row(
           children: [
             Image.asset('asset/logo.png', width: 30, height: 30),
@@ -75,6 +76,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
               ),
               SizedBox(height: 16),
               IconButton(
+                //camera button functionalities
                 onPressed: () {
                   _showCaptainAmericaProfile(
                       context,
@@ -102,6 +104,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
                     List<String> photoAssets = [
+                      //image assets
                       'asset/hulk.jpg',
                       'asset/iron_man.jpg',
                       'asset/doctorstrange.jpg',
@@ -158,6 +161,7 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
                     color: Colors.white,
                   ),
                   PopupMenuButton<String>(
+                    //share button contents
                     icon: Icon(Icons.share),
                     onSelected: (String value) {},
                     itemBuilder: (BuildContext context) {
@@ -224,7 +228,9 @@ class _ScannerWebPageState extends State<ScannerWebPage> {
   }
 
   void _showCaptainAmericaProfile(
-      BuildContext context, MarvelCharacter character) {
+      //captainamerica profile popup
+      BuildContext context,
+      MarvelCharacter character) {
     showDialog(
       context: context,
       builder: (BuildContext context) {

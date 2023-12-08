@@ -46,8 +46,8 @@ class SettingsPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Container(
                 constraints: BoxConstraints(
-                  maxWidth: 800.0, // Set your desired maximum width
-                  maxHeight: 770.0, // Set your desired maximum height
+                  maxWidth: 800.0, //maximum width
+                  maxHeight: 770.0, //maximum height
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
@@ -65,7 +65,8 @@ class SettingsPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start, //settings container contents
                     children: <Widget>[
                       buildSettingRow("General Settings", [
                         buildSwitchTile("Dark Mode", true),
@@ -73,21 +74,21 @@ class SettingsPage extends StatelessWidget {
                         buildTextTile("History", onTap: () {}),
                       ]),
                       Divider(
-                        color: Colors.white, // Divider color changed to white
+                        color: Colors.white, // Divider color white
                       ),
                       buildSettingRow("Appearance", [
                         buildTextTile("Font Size", onTap: () {}),
                         buildTextTile("Theme Color", onTap: () {}),
                       ]),
                       Divider(
-                        color: Colors.white, // Divider color changed to white
+                        color: Colors.white,
                       ),
                       buildSettingRow("Privacy", [
                         buildSwitchTile("Location Services", true),
                         buildSwitchTile("Personalized Ads", true),
                       ]),
                       Divider(
-                        color: Colors.white, // Divider color changed to white
+                        color: Colors.white,
                       ),
                       buildSettingRow("Account Settings", [
                         buildTextTile("Change Password", onTap: () {}),
@@ -103,9 +104,7 @@ class SettingsPage extends StatelessWidget {
                           Row(
                             children: [
                               ElevatedButton(
-                                onPressed: () {
-                                  // Add functionality for the Cancel button here
-                                },
+                                onPressed: () {},
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.grey,
                                   shape: RoundedRectangleBorder(
@@ -121,13 +120,11 @@ class SettingsPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 10), // Adjusted spacing
+                              SizedBox(width: 10), //spacing
                             ],
                           ),
                           ElevatedButton(
-                            onPressed: () {
-                              // Add functionality for the Save button here
-                            },
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               primary: Colors.red,
                               shape: RoundedRectangleBorder(
@@ -162,16 +159,14 @@ class SettingsPage extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.robotoSlab(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.red), // Text color changed to red
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red),
         ),
         SizedBox(height: 5),
         Divider(
-          color: Colors.white, // Divider color changed to white
+          color: Colors.white,
           thickness: 2,
           height: 5,
-        ), // Reduced spacing
+        ),
         SizedBox(height: 5),
         Column(
           children: content,
@@ -184,8 +179,7 @@ class SettingsPage extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: GoogleFonts.robotoSlab(
-            color: Colors.white), // Text color changed to white
+        style: GoogleFonts.robotoSlab(color: Colors.white), // Text color white
       ),
       trailing: Switch(
         value: value,
@@ -198,8 +192,7 @@ class SettingsPage extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: GoogleFonts.roboto(
-            color: Colors.white), // Text color changed to white
+        style: GoogleFonts.roboto(color: Colors.white), // Text color white
       ),
       onTap: onTap,
     );

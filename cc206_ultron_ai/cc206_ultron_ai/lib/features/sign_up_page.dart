@@ -10,15 +10,14 @@ class SignUpPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('asset/superheroes.jpg'),
+            image: AssetImage('asset/superheroes.jpg'), //background image
             fit: BoxFit.cover,
           ),
         ),
         child: Center(
           child: Container(
             width: 480,
-            margin:
-                EdgeInsets.only(top: 5), // Adjusted margin for better centering
+            margin: EdgeInsets.only(top: 5), // Adjusted margin
             padding: const EdgeInsets.all(16.0),
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.7),
@@ -29,7 +28,7 @@ class SignUpPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    // Larger Logo
+                    // Logo sizing adjustments
                     Image.asset(
                       'asset/logo.png',
                       height: 150,
@@ -182,9 +181,7 @@ class SignUpPage extends StatelessWidget {
 
                     // Sign Up button
                     ElevatedButton(
-                      onPressed: () {
-                        // Handle sign-up logic here
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         primary: Colors.red,
                         padding: EdgeInsets.symmetric(

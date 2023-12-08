@@ -61,7 +61,7 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
               },
             )
           ]),
-      drawer: HomeDrawer(),
+      drawer: HomeDrawer(), //drawer codes
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -82,7 +82,8 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
                   decoration: InputDecoration(
                     labelText: 'Marvel Characters',
                     labelStyle: TextStyle(color: Colors.white),
-                    prefixIcon: Icon(Icons.search, color: Colors.white),
+                    prefixIcon:
+                        Icon(Icons.search, color: Colors.white), //appbar text
                     suffixIcon: IconButton(
                       icon: Icon(Icons.clear, color: Colors.white),
                       onPressed: () {
@@ -197,7 +198,9 @@ class _CharacterProfilesState extends State<CharacterProfiles> {
 }
 
 void _showCaptainAmericaProfile(
-    BuildContext context, MarvelCharacter character) {
+    //captain america popup
+    BuildContext context,
+    MarvelCharacter character) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -314,6 +317,7 @@ void _showCaptainAmericaProfile(
 }
 
 void _showHulkProfile(BuildContext context, MarvelCharacter character) {
+  //hulk profile popup
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -432,6 +436,7 @@ void _showHulkProfile(BuildContext context, MarvelCharacter character) {
 }
 
 void _showScarletWitchProfile(BuildContext context, MarvelCharacter character) {
+  //scarletwitch profile popup
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -549,6 +554,7 @@ void _showScarletWitchProfile(BuildContext context, MarvelCharacter character) {
 }
 
 void _showIronManProfile(BuildContext context, MarvelCharacter character) {
+  //ironman profile popup
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -679,6 +685,7 @@ class MarvelCharacter {
 }
 
 final List<MarvelCharacter> marvelCharacters = [
+  //profile contents
   MarvelCharacter(
     name: 'Iron Man',
     description: 'The Genius Billionaire.',
